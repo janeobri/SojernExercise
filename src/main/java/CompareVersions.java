@@ -4,14 +4,15 @@ public class CompareVersions {
     
     public static void main(String[] args){
        
-        //pass in two string versions separated by a space (if only one version is passed in then default values will be used)
-        String[] versions = args.length > 1 ? args : new String[]{"1.3", "1.2"};
+        //pass in two string versions separated by a space (if only one version is passed in (or none!) then default values will be used)
+        String[] versions = args.length > 1 ? args : new String[]{"1.3.3.5", "1.2.9.9.9.9"};
 
-        System.out.println("1 = version1 > version2\n-1 = version1 < version2\n0 otherwise");
+        System.out.println("1 = version1 > version2\n-1 = version1 < version2\n0 otherwise\n");
 
         if(args.length>1){
             System.out.println("You passed in " + versions[0] + " and " + versions[1] +"\nResult = " + compare(versions[0], versions[1]) + "\n");
         } else{
+            //expected result for default values "1.3.3.5" and "1.2.9.9.9.9" is 1
             System.out.println("Default values " + versions[0] + " and " + versions[1] +" used.\nResult = "+ compare(versions[0], versions[1]) + "\n");
         }
 
